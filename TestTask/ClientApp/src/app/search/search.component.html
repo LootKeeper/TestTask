@@ -1,1 +1,61 @@
-<p>search works!</p>
+
+<div class="search">
+    <div class="search-header">
+        <h4>Search page</h4>
+    </div>
+    <div class="search-filters">
+        <div class="filter">
+            <label class="filter__label">Name</label>
+            <input type="text" class="filter__input" [(ngModel)]="filterEntity.name"/>
+        </div>
+        <div class="filter">
+            <label class="filter__label">Enum</label>
+            <select name="enum" [(ngModel)]="filterEntity.enum" class="form-input__field">
+                <option [ngValue]="null"></option>
+                <option *ngFor="let enum of modelEnums" [ngValue]="enum">
+                    {{ enum }}
+                </option>
+            </select>
+        </div>
+        <div class="filter">
+            <label class="filter__label">Date</label>
+            <input class="filter__input" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" type="date" [(ngModel)]="filterEntity.date"/>
+        </div>
+        <div class="filter">
+            <label class="filter__label">CheckBox</label>
+            <input class="filter__input" type="checkbox" [(ngModel)]="filterEntity.firstSwitcher"/>
+        </div>
+        <div class="filter">
+            <label class="filter__label">Switcher</label>
+            <div class="filter__input">
+                <div class="filter">
+                    <label class="filter__label">True:</label>
+                    <input name="secondSwitcher" type="radio" class="filter__input" [value]="true" [(ngModel)]="filterEntity.secondSwitcher" />
+                </div>
+                <div class="filter">
+                    <label class="filter__label">False:</label>
+                    <input name="secondSwitcher" type="radio" class="filter__input" [value]="false" [(ngModel)]="filterEntity.secondSwitcher" />
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <label class="filter__label">Range</label>
+            <input class="filter__input" [(ngModel)]="filterEntity.range"/>
+        </div>
+    </div>
+    <div class="search-actions">
+        <button (click)="reset()">Reset filter</button>
+    </div>
+    <div class="search-list">
+        <ul>
+            <li class="preview" *ngFor="let model of list | filter: filterEntity">
+                <span>Name: {{ model.name }}</span>
+                <span>Enum: {{ model.enum }} </span>
+                <span>Date: {{ model.date }}</span>
+                <span>Checkout: {{ model.firstSwitcher }}</span>
+                <span>Checkbox: {{ model.secondSwitcher }}</span>
+                <span>Range: {{ model.range }}</span>
+            </li>
+        </ul>
+    </div>
+</div>

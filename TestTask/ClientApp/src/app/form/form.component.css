@@ -51,3 +51,23 @@
 .form-action__reset{
     grid-area: reset;
 }
+
+input:invalid {
+    border: 2px solid #e49696;
+    border-radius: 5px;
+}
+
+input:valid{
+    border: 2px solid #86d873;
+    border-radius: 5px;
+}
+
+.invalid {
+    border: 2px solid #e49696;
+    border-radius: 5px;
+}
+
+.valid {
+    border: 2px solid #86d873;
+    border-radius: 5px;
+}

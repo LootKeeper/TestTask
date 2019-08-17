@@ -1,7 +1,7 @@
 import { FormState } from './form-state';
-import { FormComponent } from '../../form/form.component';
+import { FormComponent } from '../form.component';
 import { UpdateFormState } from './update-form-state';
-import { PlainModel } from '../plain-model';
+import { PlainModel } from '../../model/plain-model';
 
 export class CreateFormState implements FormState {
 
@@ -22,7 +22,12 @@ export class CreateFormState implements FormState {
 
     _createModel(): void {
         this._form.dataService.createEntity(this._form.model).subscribe(result => {
-            this._form.model = result;
+            if (result) {
+                this._form.model = result;
+            }
+            else {
+                this.reset();
+            }
         })
     }
 }

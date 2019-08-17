@@ -1,18 +1,18 @@
-<form class="base-form">
+<form #form="ngForm" class="base-form">
     <div class="form-header">
-
+        <h4>Model creation page</h4>
     </div>
 
     <div class="form-inputs">
         
         <div class="form-input">
             <label class="form-input__label">Name:</label>
-            <input class="form-input__field" type="text" name="name" [(ngModel)]="model.name" />
+            <input class="form-input__field" type="text" name="name" required maxlength="30" [(ngModel)]="model.name" />
         </div>
 
         <div class="form-input">
             <label class="form-input__label">Enum:</label>
-            <select name="enum" [(ngModel)]="model.enum" class="form-input__field">
+            <select name="enum" [(ngModel)]="model.enum" [class.invalid]="model.enum == null" [class.valid]="model.enum != null" required class="form-input__field">
                 <option *ngFor="let enum of modelEnums" [ngValue]="enum" >
                     {{ enum }}
                 </option>
@@ -21,7 +21,7 @@
 
         <div class="form-input">
             <label class="form-input__label">Date:</label>
-            <input class="form-input__field" name="date" type="date" [(ngModel)]="model.date" />
+            <input class="form-input__field" name="date" type="date" required pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" [(ngModel)]="model.date" />
         </div>
 
         <div class="form-input">
@@ -45,13 +45,13 @@
 
         <div class="form-input">
             <label class="form-input__label">Range:</label>
-            <input class="form-input__field" name="range" type="range" [(ngModel)]="model.range" />
+            <input class="form-input__field" name="range" type="range" min="0" max="100" [(ngModel)]="model.range" />
         </div>
 
     </div>
 
     <div class="form-actions">
-        <button class="form-action form-action__save" (click)="save()" type="submit">Save</button>
+        <button class="form-action form-action__save" [disabled]="form.invalid" (click)="save()" type="submit">Save</button>
         <button class="form-action form-action__reset" (click)="reset()" type="reset">Reset</button>
     </div>
 </form>

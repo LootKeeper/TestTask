@@ -20,6 +20,7 @@ namespace DataLayer.Model
         public PlainEnum Enum { get; set; }
         [DataType(DataType.Date)]
         [JsonProperty(PropertyName = "date")]
+        [JsonConverter(typeof(OnlyDateConvertor))]
         public DateTime Date { get; set; }
         [JsonProperty(PropertyName = "firstSwitcher")]
         public bool FirstSwitcher { get; set; }

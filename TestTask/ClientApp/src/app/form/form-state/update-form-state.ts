@@ -1,5 +1,5 @@
 import { FormState } from './form-state';
-import { FormComponent } from '../../form/form.component';
+import { FormComponent } from '../form.component';
 import { CreateFormState } from './create-form-state';
 
 export class UpdateFormState implements FormState {

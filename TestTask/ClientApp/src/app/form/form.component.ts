@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ModelService } from '../services/model.service';
-import { FormState } from '../model/form-state/form-state';
+import { FormState } from './form-state/form-state';
 import { PlainModel } from '../model/plain-model';
 import { PlainEnum } from '../model/plain-enum';
-import { CreateFormState } from '../model/form-state/create-form-state';
+import { CreateFormState } from './form-state/create-form-state';
 
 
 @Component({
