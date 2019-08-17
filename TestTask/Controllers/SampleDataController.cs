@@ -30,7 +30,7 @@ namespace TestTask.Controllers
         }
 
         [HttpPost("model")]
-        public PlainModel CreatePlainModel(PlainModel model)
+        public PlainModel CreatePlainModel([FromBody]PlainModel model)
         {
             if (ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace TestTask.Controllers
         }
 
         [HttpPut("model")]
-        public PlainModel UpdatePlainModel(PlainModel model)
+        public PlainModel UpdatePlainModel([FromBody]PlainModel model)
         {
             if (ModelState.IsValid)
             {

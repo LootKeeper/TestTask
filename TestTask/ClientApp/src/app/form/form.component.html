@@ -1,0 +1,57 @@
+<form class="base-form">
+    <div class="form-header">
+
+    </div>
+
+    <div class="form-inputs">
+        
+        <div class="form-input">
+            <label class="form-input__label">Name:</label>
+            <input class="form-input__field" type="text" name="name" [(ngModel)]="model.name" />
+        </div>
+
+        <div class="form-input">
+            <label class="form-input__label">Enum:</label>
+            <select name="enum" [(ngModel)]="model.enum" class="form-input__field">
+                <option *ngFor="let enum of modelEnums" [ngValue]="enum" >
+                    {{ enum }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-input">
+            <label class="form-input__label">Date:</label>
+            <input class="form-input__field" name="date" type="date" [(ngModel)]="model.date" />
+        </div>
+
+        <div class="form-input">
+            <label class="form-input__label">CheckBox:</label>
+            <input class="form-input__field" name="firstSwitcher" type="checkbox" [(ngModel)]="model.firstSwitcher" />
+        </div>
+
+        <div class="form-input">
+            <label class="form-input__label">Switcher:</label>
+            <div class="form-input__field form-input">
+                <div class="form-input form-input__field">
+                    <label class="form-input__label">True:</label>
+                    <input name="secondSwitcher" type="radio" class="form-input__field" [value]="true" [(ngModel)]="model.secondSwitcher" />
+                </div>
+                <div class="form-input form-input__field">
+                    <label class="form-input__label">False:</label>
+                    <input name="secondSwitcher" type="radio" class="form-input__field" [value]="false" [(ngModel)]="model.secondSwitcher" />
+                </div>
+            </div>
+        </div>
+
+        <div class="form-input">
+            <label class="form-input__label">Range:</label>
+            <input class="form-input__field" name="range" type="range" [(ngModel)]="model.range" />
+        </div>
+
+    </div>
+
+    <div class="form-actions">
+        <button class="form-action form-action__save" (click)="save()" type="submit">Save</button>
+        <button class="form-action form-action__reset" (click)="reset()" type="reset">Reset</button>
+    </div>
+</form>

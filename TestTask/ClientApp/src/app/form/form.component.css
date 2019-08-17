@@ -1,0 +1,53 @@
+.base-form{
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "inputs inputs"
+        ". actions";
+    grid-row-gap: 10px;
+}
+
+.form-header{
+    grid-area: header;
+}
+
+.form-inputs{
+    grid-area: inputs;
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+    grid-template-columns: min-content;
+    grid-row-gap: 20px;
+}
+
+.form-input {
+    display: grid;
+    grid-template-columns: repeat(2, min-content);
+    grid-column-gap: 10px;
+    align-items: center;
+}
+
+.form-input__label{
+}
+
+.form-input__field{
+}
+
+.form-actions{
+    grid-area: actions;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-areas: "save reset";
+    grid-template-columns: repeat(2, min-content);
+}
+
+.form-action{
+    width: 80px;
+}
+
+.form-action__save{
+    grid-area: save;
+}
+
+.form-action__reset{
+    grid-area: reset;
+}

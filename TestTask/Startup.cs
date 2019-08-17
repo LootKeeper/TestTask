@@ -1,4 +1,5 @@
 using DataLayer.Context;
+using DataLayer.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,7 @@ namespace TestTask
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            services.AddTransient<IRepository, Repository>();
 
             services.AddSpaStaticFiles(configuration =>
             {

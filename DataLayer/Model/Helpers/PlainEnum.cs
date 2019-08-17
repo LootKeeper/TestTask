@@ -6,8 +6,8 @@ namespace DataLayer.Model.Helpers
 {
     public enum PlainEnum
     {
-        One,
-        Two,
-        Three
+        One = 0,
+        Two = 1,
+        Three = 2
     }
 }
