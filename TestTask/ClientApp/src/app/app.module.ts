@@ -25,7 +25,8 @@ import { CommonModule } from '@angular/common';
         FormsModule,
         CommonModule,
         RouterModule.forRoot([
-            { path: '', component: FormComponent, pathMatch: 'full' },
+            { path: '', redirectTo: '/form', pathMatch: 'full' },
+            { path: 'form', component: FormComponent },
             { path: 'listing', component: SearchComponent },
         ])
     ],

@@ -3,15 +3,11 @@
         <a [routerLink]='["/"]'>Test task</a>
     </div>
     <div class='nav-items'>
-        <div class="nav-item" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
-            <a [routerLink]='["/"]'>
-                <span class='glyphicon glyphicon-plus'></span> Create
-            </a>
-        </div>
-        <div class="nav-item" [routerLinkActive]='["link-active"]'>
-            <a [routerLink]='["/listing"]'>
-                <span class='glyphicon glyphicon-search'></span> Listing
-            </a>
-        </div>
+        <a class="nav-item" routerLink='./form' routerLinkActive='active'>
+            <span class='glyphicon glyphicon-plus'></span> Create
+        </a>
+        <a class="nav-item" routerLink='./listing' routerLinkActive='active'>
+            <span class='glyphicon glyphicon-search'></span> Listing
+        </a>
     </div>
 </div>
