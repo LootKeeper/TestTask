@@ -6,6 +6,10 @@ export class UpdateFormState implements FormState {
 
     _form: FormComponent;
 
+    get action() : string {
+        return 'Update';
+    }
+
     constructor(form: FormComponent) {
         this._form = form;
     }

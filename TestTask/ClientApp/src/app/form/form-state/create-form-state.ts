@@ -7,6 +7,10 @@ export class CreateFormState implements FormState {
 
     _form: FormComponent;
 
+    get action(): string {
+        return 'Create'
+    }
+
     constructor(form: FormComponent) {
         this._form = form;
     }
@@ -17,11 +21,12 @@ export class CreateFormState implements FormState {
     }
 
     reset(): void {
-        this._form.model = new PlainModel();
+        this._form.model = new PlainModel();      
     }
 
     _createModel(): void {
-        this._form.dataService.createEntity(this._form.model).subscribe(result => {
+        let model = this._overwriteNullFields(this._form.model);
+        this._form.dataService.createEntity(model).subscribe(result => {
             if (result) {
                 this._form.model = result;
             }
@@ -29,5 +34,13 @@ export class CreateFormState implements FormState {
                 this.reset();
             }
         })
+    }
+
+    // don't want to pass null values.
+    _overwriteNullFields(model: PlainModel): PlainModel {
+        if (model.firstSwitcher == null) model.firstSwitcher = false;
+        if (model.secondSwitcher == null) model.secondSwitcher = false;
+
+        return model;
     }
 }

@@ -1,3 +1,4 @@
+
 .base-form{
     display: grid;
     grid-template-areas:
@@ -21,7 +22,7 @@
 
 .form-input {
     display: grid;
-    grid-template-columns: repeat(2, min-content);
+    grid-template-columns: 100px min-content;
     grid-column-gap: 10px;
     align-items: center;
 }
@@ -30,6 +31,13 @@
 }
 
 .form-input__field{
+}
+
+.inline-elements{
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-column-gap: 10px;
+    align-items: center;
 }
 
 .form-actions{
@@ -41,7 +49,7 @@
 }
 
 .form-action{
-    width: 80px;
+    width: 100px;
 }
 
 .form-action__save{
@@ -52,12 +60,12 @@
     grid-area: reset;
 }
 
-input:invalid {
+input[type=text]:invalid, input[type=date]:invalid {
     border: 2px solid #e49696;
     border-radius: 5px;
 }
 
-input:valid{
+input[type=text]:valid, input[type=date]:valid {
     border: 2px solid #86d873;
     border-radius: 5px;
 }
@@ -70,4 +78,12 @@ input:valid{
 .valid {
     border: 2px solid #86d873;
     border-radius: 5px;
+}
+
+input[type=range].invalid {
+    box-shadow: 0 0 1px 1px #e49696;
+}
+
+input[type=range].valid {
+    box-shadow: 0 0 1px 1px #86d873;
 }

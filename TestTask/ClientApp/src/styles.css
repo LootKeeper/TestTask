@@ -7,10 +7,8 @@
 a {
     padding: 5px 10px;
     text-decoration: none;
-    margin-right: 10px;
     margin-top: 10px;
     display: inline-block;
-    background-color: #eee;
     border-radius: 4px;
 }
 
@@ -21,3 +19,11 @@ a {
     a.active {
         color: #039be5;
     }
+
+input[type=text], input[type=date], select{
+    width: 140px;
+}
+
+input, select{
+    border-radius: 3px;
+}

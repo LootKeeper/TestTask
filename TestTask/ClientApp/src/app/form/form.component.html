@@ -13,6 +13,7 @@
         <div class="form-input">
             <label class="form-input__label">Enum:</label>
             <select name="enum" [(ngModel)]="model.enum" [class.invalid]="model.enum == null" [class.valid]="model.enum != null" required class="form-input__field">
+                <option [ngValue]="null"></option>
                 <option *ngFor="let enum of modelEnums" [ngValue]="enum" >
                     {{ enum }}
                 </option>
@@ -32,26 +33,26 @@
         <div class="form-input">
             <label class="form-input__label">Switcher:</label>
             <div class="form-input__field form-input">
-                <div class="form-input form-input__field">
-                    <label class="form-input__label">True:</label>
-                    <input name="secondSwitcher" type="radio" class="form-input__field" [value]="true" [(ngModel)]="model.secondSwitcher" />
+                <div class="inline-elements form-input__field">
+                    <label>True:</label>
+                    <input name="secondSwitcher" class="inline-element" type="radio" [value]="true" [(ngModel)]="model.secondSwitcher" />
                 </div>
-                <div class="form-input form-input__field">
-                    <label class="form-input__label">False:</label>
-                    <input name="secondSwitcher" type="radio" class="form-input__field" [value]="false" [(ngModel)]="model.secondSwitcher" />
+                <div class="inline-elements form-input__field">
+                    <label>False:</label>
+                    <input name="secondSwitcher" class="inline-element" type="radio" [value]="false" [(ngModel)]="model.secondSwitcher" />
                 </div>
             </div>
         </div>
 
         <div class="form-input">
             <label class="form-input__label">Range:</label>
-            <input class="form-input__field" name="range" type="range" min="0" max="100" [(ngModel)]="model.range" />
+            <input class="form-input__field" name="range" type="range" min="0" max="100" [class.valid]="model.range" [class.invalid]="!model.range" required [(ngModel)]="model.range" />
         </div>
 
     </div>
 
     <div class="form-actions">
-        <button class="form-action form-action__save" [disabled]="form.invalid" (click)="save()" type="submit">Save</button>
-        <button class="form-action form-action__reset" (click)="reset()" type="reset">Reset</button>
+        <button class="form-action form-action__save" [disabled]="form.invalid" (click)="save()" type="submit"> {{ action }}</button>
+        <button class="form-action form-action__reset" (click)="reset()" type="reset">New entity</button>
     </div>
 </form>

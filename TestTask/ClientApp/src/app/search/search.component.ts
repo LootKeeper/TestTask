@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
 
     constructor(dataService: ModelService) {
         this._dataService = dataService;
-        this.filterEntity = new PlainModel();
+        this.reset();
     }
 
     ngOnInit() {

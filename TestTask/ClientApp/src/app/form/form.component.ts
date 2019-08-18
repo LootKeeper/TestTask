@@ -20,6 +20,10 @@ export class FormComponent implements OnInit {
 
     _formState: FormState;
 
+    get action() : string {
+        return this._formState.action;
+    }
+
     constructor(dataService: ModelService) {
         this.dataService = dataService;
         this.model = new PlainModel();

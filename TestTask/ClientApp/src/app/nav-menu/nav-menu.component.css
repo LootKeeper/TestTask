@@ -26,7 +26,6 @@ li.link-active a:focus {
     grid-area: items;
     display: grid;
     grid-template-columns: repeat(2, min-content);
-    grid-column-gap: 10px;
     align-items: center;
 }
 

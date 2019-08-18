@@ -28,7 +28,7 @@ namespace DataLayer.Repository
 
         public IEnumerable<PlainModel> GetAll()
         {
-            return _context.PlainModels.Take(_context.PlainModels.Count());
+            return _context.PlainModels.AsEnumerable();
         }
 
         public PlainModel Update(PlainModel model)
