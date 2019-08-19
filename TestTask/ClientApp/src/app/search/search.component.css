@@ -27,6 +27,10 @@
         grid-area: list;
     }
 
+    .search > .search-list > .loading-label{
+        text-align: center;
+    }
+
     .search > .filter {
         display: grid;
         grid-template-areas: "label" "input";

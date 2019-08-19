@@ -15,6 +15,7 @@ export class SearchComponent implements OnInit {
     list: PlainModel[];
     filterEntity: PlainModel;
     modelEnums: PlainEnum[] = [PlainEnum.one, PlainEnum.two, PlainEnum.three];
+    isLoading = true;
 
     constructor(dataService: ModelService) {
         this._dataService = dataService;
@@ -24,6 +25,7 @@ export class SearchComponent implements OnInit {
     ngOnInit() {
         this._dataService.getEntities().subscribe(result => {
             this.list = result;
+            this.isLoading = false;
         })
     }
 

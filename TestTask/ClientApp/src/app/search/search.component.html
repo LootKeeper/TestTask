@@ -47,7 +47,10 @@
         <button (click)="reset()">Reset filter</button>
     </div>
     <div class="search-list">
-        <div class="table">
+        <div *ngIf="isLoading" class="loading-label">
+            Loading...
+        </div>
+        <div *ngIf="!isLoading" class="table">
             <div class="table-head">
                 <span>Name</span>
                 <span>Enum</span>
