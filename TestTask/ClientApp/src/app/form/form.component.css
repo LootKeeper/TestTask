@@ -1,18 +1,15 @@
 
-.base-form{
+.base-form {
     display: grid;
-    grid-template-areas:
-        "header header"
-        "inputs inputs"
-        ". actions";
+    grid-template-areas: "header header" "inputs inputs" ". actions";
     grid-row-gap: 10px;
 }
 
-.form-header{
+.form-header {
     grid-area: header;
 }
 
-.form-inputs{
+.form-inputs {
     grid-area: inputs;
     display: grid;
     grid-template-rows: repeat(6, 50px);
@@ -20,27 +17,27 @@
     grid-row-gap: 20px;
 }
 
-.form-input {
-    display: grid;
-    grid-template-columns: 100px min-content;
-    grid-column-gap: 10px;
-    align-items: center;
-}
+    .form-inputs > .form-input {
+        display: grid;
+        grid-template-columns: 100px min-content;
+        grid-column-gap: 10px;
+        align-items: center;
+    }
 
-.form-input__label{
-}
+        .form-inputs > .form-input > .form-input__label {
+        }
 
-.form-input__field{
-}
+        .form-inputs > .form-input > .form-input__field {
+        }
 
-.inline-elements{
+.inline-elements {
     display: grid;
     grid-template-columns: min-content min-content;
     grid-column-gap: 10px;
     align-items: center;
 }
 
-.form-actions{
+.form-actions {
     grid-area: actions;
     display: grid;
     grid-column-gap: 10px;
@@ -48,17 +45,17 @@
     grid-template-columns: repeat(2, min-content);
 }
 
-.form-action{
-    width: 100px;
-}
+    .form-actions > .form-action {
+        width: 100px;
+    }
 
-.form-action__save{
-    grid-area: save;
-}
+        .form-actions > .form-action.form-action__save {
+            grid-area: save;
+        }
 
-.form-action__reset{
-    grid-area: reset;
-}
+        .form-actions > .form-action.form-action__reset {
+            grid-area: reset;
+        }
 
 input[type=text]:invalid, input[type=date]:invalid {
     border: 2px solid #e49696;

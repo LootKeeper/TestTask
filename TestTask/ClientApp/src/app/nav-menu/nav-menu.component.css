@@ -1,34 +1,38 @@
-li .glyphicon {
-    margin-right: 10px;
+a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 4px;
 }
 
-/* Highlighting rules for nav menu items */
-li.link-active a,
-li.link-active a:hover,
-li.link-active a:focus {
-    background-color: #4189C7;
-    color: white;
-}
+    a:visited, a:link {
+        color: #607D8B;
+    }
+
+    a.active {
+        color: #039be5;
+    }
 
 
-.nav{
+.nav {
     display: grid;
     grid-template-areas: "title items";
     grid-template-columns: 100px min-content;
 }
 
-.nav-brand{
-    grid-area: title;
-    align-self: center;
-}
+    .nav > .nav-brand {
+        grid-area: title;
+        align-self: center;
+    }
 
-.nav-items{
-    grid-area: items;
-    display: grid;
-    grid-template-columns: repeat(2, min-content);
-    align-items: center;
-}
+    .nav > .nav-items {
+        grid-area: items;
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        align-items: center;
+    }
 
-.nav-item{
-    justify-content: center;
-}
+        .nav > .nav-items > .nav-item {
+            justify-content: center;
+        }

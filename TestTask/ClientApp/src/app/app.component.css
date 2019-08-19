@@ -1,16 +1,14 @@
 
-.app{
-    display:grid;
-    grid-template-areas:
-        "menu"
-        "content";
+.app {
+    display: grid;
+    grid-template-areas: "menu" "content";
     grid-row-gap: 20px;
 }
 
-.menu{
-    grid-area: menu;
-}
+    .app > .menu {
+        grid-area: menu;
+    }
 
-.content{
-    grid-area: content;
-}
+    .app > .content {
+        grid-area: content;
+    }

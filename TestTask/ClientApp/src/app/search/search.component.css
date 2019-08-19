@@ -1,80 +1,72 @@
-.search{
+.search {
     display: grid;
-    grid-template-areas:
-        "header"
-        "filters"
-        "actions"
-        "list";
+    grid-template-areas: "header" "filters" "actions" "list";
     grid-row-gap: 20px;
 }
 
-.search-header{
-    grid-area: header;
-}
+    .search > .search-header {
+        grid-area: header;
+    }
 
-.search-filters{
-    grid-area: filters;
-    border: 1px solid #a9a9a9;
-    border-radius: 5px;
+    .search > .search-filters {
+        grid-area: filters;
+        border: 1px solid #a9a9a9;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-column-gap: 10px;
+    }
 
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-column-gap: 10px;
-}
+    .search > search-actions {
+        grid-area: actions;
+        margin-left: auto;
+    }
 
-.filter{
-    display: grid;
-    grid-template-areas:
-        "label"
-        "input";
-    grid-template-rows: 25px min-content;
-    grid-row-gap: 5px;
-}
 
-search-actions {
-    grid-area: actions;
-    margin-left: auto;
-}
+    .search > .search-list {
+        grid-area: list;
+    }
 
-.filter__label{
+    .search > .filter {
+        display: grid;
+        grid-template-areas: "label" "input";
+        grid-template-rows: 25px min-content;
+        grid-row-gap: 5px;
+    }
+
+.filter > .filter__label {
     grid-area: label;
 }
 
-.filter__input{
+.filter > .filter__input {
     grid-area: input;
 }
 
-.search-list{
-    grid-area: list;
-}
-
-.table{
+.table {
     display: grid;
-    grid-template-areas:
-        "head"
-        "body";
+    grid-template-areas: "head" "body";
     grid-row-gap: 5px;
 }
 
-.table-head{
-    grid-area: head;
-    display: grid;
-    grid-template-columns: repeat(6, minmax(50px, 1fr));
-    border-bottom: 2px solid #dedede;
-}
+    .table > .table-head {
+        grid-area: head;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(50px, 1fr));
+        border-bottom: 2px solid #dedede;
+    }
 
-.table-body{
-    grid-area: body;
-    display: grid;
-    grid-template-rows: repeat(auto, min-content);
-}
+    .table > .table-body {
+        grid-area: body;
+        display: grid;
+        grid-template-rows: repeat(auto, min-content);
+    }
 
-.table-body__row{
+.table-body > .table-body__row {
     display: grid;
     grid-template-columns: repeat(6, minmax(50px, 1fr));
     grid-row-gap: 2px;
 }
 
-.table-body__row:nth-child(2n+2){
-    background-color: #cfcfcf;
-}
+    .table-body > .table-body__row:nth-child(2n+2) {
+        background-color: #cfcfcf;
+    }
