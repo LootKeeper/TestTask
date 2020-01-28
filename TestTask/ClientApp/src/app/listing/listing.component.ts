@@ -4,11 +4,11 @@ import { PlainModel } from '../model/plain-model';
 import { PlainEnum } from '../model/plain-enum';
 
 @Component({
-    selector: 'app-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.css']
+    selector: 'app-listing',
+    templateUrl: './Listing.component.html',
+    styleUrls: ['./Listing.component.css']
 })
-export class SearchComponent implements OnInit {
+export class ListingComponent implements OnInit {
 
     _dataService: ModelService
 

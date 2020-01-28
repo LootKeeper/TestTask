@@ -10,10 +10,12 @@ export class ModelService {
 
     _http: HttpClient
     _baseUrl: string;
+    _headers: HttpHeaders;
 
     constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
         this._http = http;
         this._baseUrl = baseUrl;
+        this._headers = this._createHeaders();
     }
 
     getEntity(id: number): Observable<PlainModel> {
@@ -25,13 +27,12 @@ export class ModelService {
     }
 
     createEntity(model: PlainModel): Observable<PlainModel> {
-        let headers = this._createHeaders();
-        return this._http.post<PlainModel>(this._baseUrl + 'api/SampleData/model', model, { headers });
+        return this._http.post<PlainModel>(this._baseUrl + 'api/SampleData/model', model, { headers: this._headers });
     }
 
     updateEntity(model: PlainModel): Observable<PlainModel> {
         let headers = this._createHeaders();
-        return this._http.put<PlainModel>(this._baseUrl + 'api/SampleData/model', model, { headers });
+        return this._http.put<PlainModel>(this._baseUrl + 'api/SampleData/model', model, { headers: this._headers });
     }
 
     _createHeaders(): HttpHeaders {        
